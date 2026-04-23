@@ -1,0 +1,39 @@
+# Machine Learning class project — FakeVsReal + LeftVsRight notebooks
+# Install: pip install -r requirements.txt
+#
+# PyTorch: default pip can install CPU-only torch while torchvision is CUDA (or vice versa),
+# which breaks imports. Install a *matched* torch + torchvision + torchaudio set from:
+#   https://pytorch.org/get-started/locally/
+# then install the rest, or: pip install -r requirements.txt with CPU wheels only if you
+# do not use GPU.
+
+# Data & tables
+pandas>=1.5.0
+numpy>=1.23.0
+
+# ML / numerics
+scipy>=1.10.0
+scikit-learn>=1.2.0
+
+# Plotting
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Text features (FakeVsReal Step3b, LeftVsRight Step1)
+vaderSentiment>=3.3.2
+textblob>=0.17.0
+textstat>=0.7.3
+
+# Deep learning (FakeVsReal Step9, LeftVsRight Step2) — also pulled in by Transformers
+torch>=2.0.0
+torchvision>=0.15.0
+torchaudio>=2.0.0
+
+# Hugging Face
+transformers>=4.41.0
+datasets>=2.14.0
+accelerate>=0.24.0
+
+# Optional: run notebooks in Jupyter / fewer tqdm warnings
+# jupyter
+# ipywidgets
