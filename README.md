@@ -5,6 +5,12 @@
 
 ---
 
+## 🎥 Demo Video
+
+[Watch the project presentation](https://drive.google.com/file/d/1Pi2VjHoTQWcFTQxkptiS0_Yk892yl39U/view?usp=sharing)
+
+---
+
 ## Overview
 
 FactLens is a dual-task machine learning system that detects **fake news** and **political bias** in news articles simultaneously, with full explainability. Given any article text, FactLens returns:
@@ -32,29 +38,9 @@ Built with Logistic Regression (TF-IDF) and fine-tuned DistilBERT, with explaina
 ## Project Structure
 
 ```
-FactLens_Group9/
+FactLens/
 │
-├── data/                          # Dataset 1 artifacts (Fake vs Real)
-│   ├── Fake.csv
-│   ├── True.csv
-│   ├── df_cleaned.csv
-│   ├── df_with_features.csv
-│   ├── tfidf_matrix.npz
-│   ├── tfidf_vectorizer.pkl
-│   ├── logistic_regression_model.pkl
-│   ├── logistic_regression_enhanced.pkl
-│   ├── distilbert_model/
-│   └── *.png                      # Visualizations
-│
-├── data2/                         # Dataset 2 artifacts (Left vs Right)
-│   ├── news_bias.csv
-│   └── artifacts/
-│       ├── tfidf_vectorizer.pkl
-│       ├── left_right_logreg.pkl
-│       ├── label_encoder.pkl
-│       └── distilbert_left_right/
-│
-├── notebooks/                     # Dataset 1 notebooks (Mauro)
+├── fake_news_detection/           # Dataset 1 notebooks (Fake vs Real)
 │   ├── Step2_EDA.ipynb
 │   ├── Step3_Cleaning.ipynb
 │   ├── Step3b_Features.ipynb
@@ -71,11 +57,22 @@ FactLens_Group9/
 │   ├── Step11_LR_vs_DistilBERT.ipynb
 │   └── Step12_CrossTask_Analysis.ipynb
 │
-├── notebooks2/                    # Dataset 2 notebooks (Valentina & John)
+├── political_bias/                # Dataset 2 notebooks (Left vs Right)
 │   ├── Step1_LeftVsRight_LogisticRegression.ipynb
 │   └── Step2_LeftVsRight_DistilBERT.ipynb
 │
-├── FactLens_Demo.ipynb            # Live Gradio demo
+├── demo/
+│   └── FactLens_Demo.ipynb        # Live Gradio demo
+│
+├── presentation/
+│   └── FactLens_Presentation.pptx
+│
+├── report/
+│   └── FactLens_Report.pdf
+│
+├── data/
+│   └── README.md                  # Download instructions for datasets
+│
 ├── requirements.txt
 └── README.md
 ```
@@ -89,7 +86,7 @@ FactLens_Group9/
 | Fake vs Real News | [Kaggle — Bisaillon](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset) | 44,898 → 38,590 after cleaning | Binary: Fake / Real |
 | Political Bias | [Kaggle — cl0ud0](https://www.kaggle.com/datasets/cl0ud0/news-political-bias-classification-dataset) | 13,366 | Binary: Left / Right |
 
-> **Note:** Datasets are not included in this repository due to size. Download them from the Kaggle links above and place them in `data/` and `data2/` respectively.
+> **Note:** Datasets are not included in this repository due to size. Download them from the Kaggle links above and place them in `data/` respectively.
 
 ---
 
@@ -115,7 +112,7 @@ LR Coefficients            Integrated Gradients
 
 ## Running the Demo
 
-The demo runs in Google Colab. Open `FactLens_Demo.ipynb` and run all cells.
+The demo runs in Google Colab. Open `demo/FactLens_Demo.ipynb` and run all cells.
 
 ```python
 # Cell 1 — Mount Drive
@@ -135,9 +132,9 @@ A public Gradio link will be generated. Paste any article text and get instant r
 
 ## Notebooks Guide
 
-Run notebooks in order within each dataset:
+All notebooks are designed to run in **Google Colab** with Google Drive mounted. Run them in order within each dataset. Update `DATA_PATH` in the first cell of each notebook to match your Google Drive folder.
 
-**Dataset 1 (Fake vs Real) — `notebooks/`**
+**Dataset 1 (Fake vs Real) — `fake_news_detection/`**
 
 | Step | Notebook | Description |
 |------|----------|-------------|
@@ -157,7 +154,7 @@ Run notebooks in order within each dataset:
 | 11 | Step11_LR_vs_DistilBERT | Model comparison |
 | 12 | Step12_CrossTask_Analysis | Cross-task orthogonality analysis |
 
-**Dataset 2 (Left vs Right) — `notebooks2/`**
+**Dataset 2 (Left vs Right) — `political_bias/`**
 
 | Step | Notebook | Description |
 |------|----------|-------------|
@@ -177,7 +174,7 @@ cd FactLens
 pip install -r requirements.txt
 ```
 
-All notebooks are designed to run in **Google Colab** with Google Drive mounted. For DistilBERT training (Steps 9 and 2b), use a GPU runtime (A100 recommended).
+For DistilBERT training (Steps 9 and 2), use a GPU runtime (A100 recommended).
 
 ---
 
@@ -205,11 +202,8 @@ Three explainability approaches were used:
 
 ## Authors
 
-| Name | Role |
-|------|------|
-| Mauricio Velasquez | D1 pipeline, explainability, cross-task analysis, Gradio demo |
-| Valentina Kloster | D1 preprocessing, D2 LR pipeline |
-| John Corbacho Soubal | D2 DistilBERT, results analysis |
+Mauricio Velasquez · Valentina Kloster · John Corbacho Soubal  
+CAP 5610 — Florida International University, April 2026
 
 ---
 
