@@ -41,6 +41,7 @@ Built with Logistic Regression (TF-IDF) and fine-tuned DistilBERT, with explaina
 FactLens/
 │
 ├── fake_news_detection/           # Dataset 1 notebooks (Fake vs Real)
+│   ├── DataSetLink                # Kaggle dataset link
 │   ├── Step2_EDA.ipynb
 │   ├── Step3_Cleaning.ipynb
 │   ├── Step3b_Features.ipynb
@@ -58,6 +59,7 @@ FactLens/
 │   └── Step12_CrossTask_Analysis.ipynb
 │
 ├── political_bias/                # Dataset 2 notebooks (Left vs Right)
+│   ├── DataSetLink                # Kaggle dataset link
 │   ├── Step1_LeftVsRight_LogisticRegression.ipynb
 │   └── Step2_LeftVsRight_DistilBERT.ipynb
 │
@@ -65,13 +67,10 @@ FactLens/
 │   └── FactLens_Demo.ipynb        # Live Gradio demo
 │
 ├── presentation/
-│   └── FactLens_Presentation.pptx
+│   └── FactLens_Presentation.pdf
 │
 ├── report/
-│   └── FactLens_Report.pdf
-│
-├── data/
-│   └── README.md                  # Download instructions for datasets
+│   └── FactLens_Final_Report.pdf
 │
 ├── requirements.txt
 └── README.md
@@ -86,7 +85,7 @@ FactLens/
 | Fake vs Real News | [Kaggle — Bisaillon](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset) | 44,898 → 38,590 after cleaning | Binary: Fake / Real |
 | Political Bias | [Kaggle — cl0ud0](https://www.kaggle.com/datasets/cl0ud0/news-political-bias-classification-dataset) | 13,366 | Binary: Left / Right |
 
-> **Note:** Datasets are not included in this repository due to size. Download them from the Kaggle links above and place them in `data/` respectively.
+> **Note:** Datasets are not included in this repository due to size. Download links are available in the `DataSetLink` file inside each folder.
 
 ---
 
